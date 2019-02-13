@@ -9,12 +9,21 @@ import { PrestationService } from '../../services/prestation.service';
 })
 export class ListPrestationsComponent implements OnInit {
   public collection: Prestation[];
+  public headers: string[];
   constructor(
-    private ps: PrestationService
+    private ps: PrestationService,
   ) { }
 
   ngOnInit() {
     this.collection = this.ps.collection;
+    this.headers = [
+      'type',
+      'client',
+      'nb jours',
+      'tjm ht',
+      'total ht',
+      'total ttc',
+      'state'
+    ];
   }
-
 }
