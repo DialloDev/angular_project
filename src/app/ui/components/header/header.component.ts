@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public appTitle = 'Welcome to My Angular App';
+  public appTitle: string;
   constructor() { }
 
   ngOnInit() {
+    this.appTitle =  'My appName';
   }
 
 }

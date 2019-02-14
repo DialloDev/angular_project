@@ -1,7 +1,4 @@
 <app-tableau [headers]="headers">
-  <app-prestation *ngFor="let cmd of collection " [item]="cmd"></app-prestation>
- <!-- <p>un peu te texte</p>
-  <p>encore du texte</p>
-  <h1>Un test du h1</h1>-->
-
+  <app-prestation *ngFor="let cmd of collection" [item] = "cmd"></app-prestation>
 </app-tableau>
+<app-add-row [label]="linkAddPresta"></app-add-row>

@@ -1,5 +1,9 @@
-//uniquement les breakpoints (conformes au framework choisi) les goutières
+// uniquement les breakpoints (conforme au framework css utilisé), les gouttières, margin et padding pour la page et les blocs de section
+
+//Breakpoint
 $sm-breakpoint: 576px;
 $md-breakpoint: 768px;
-$lg-breakpoint: 966px;
-$xm-breakpoint: 1200px;
+$lg-breakpoint: 992px;
+$xl-breakpoint: 1200px;
+
+$gutters: 15px;

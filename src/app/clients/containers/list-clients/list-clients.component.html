@@ -1,0 +1,4 @@
+<app-tableau [headers]="headers">
+    <app-client *ngFor="let cmd of collection" [item] = "cmd"></app-client>
+</app-tableau>
+<app-add-row [label]="linkAddClient"></app-add-row>

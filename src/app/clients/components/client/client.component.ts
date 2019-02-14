@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Client } from 'src/app/shared/models/client.model';
-import { StateClient } from 'src/app/shared/enums/state-client.enum';
-import { ClientsService } from 'src/app/prestations/services/clients.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Client } from 'src/shared/models/client.model';
+import { ClientService } from '../../services/client.service';
+import { StateClient } from 'src/shared/enums/state-client.enum';
 
 @Component({
   selector: 'app-client',
@@ -9,16 +9,17 @@ import { ClientsService } from 'src/app/prestations/services/clients.service';
   styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
-
   @Input() item: Client;
+  //  public states = Object.values(State);
   public states = StateClient;
-  constructor(private ps: ClientsService) { }
+  constructor( private cs: ClientService ) { }
 
   ngOnInit() {
   }
-  public changeState(e) {
-    const state = e.target.value;
-    this.ps.update(this.item, state);
+
+  public changeState(item: Client, event) {
+    const state = event.target.value;
+    this.cs.update(item, state);
   }
 
 }

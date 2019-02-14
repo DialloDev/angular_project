@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Prestation } from 'src/app/shared/models/prestation.model';
+import { Prestation } from 'src/shared/models/prestation.model';
 import { PrestationService } from '../../services/prestation.service';
 
 @Component({
@@ -10,9 +10,9 @@ import { PrestationService } from '../../services/prestation.service';
 export class ListPrestationsComponent implements OnInit {
   public collection: Prestation[];
   public headers: string[];
-  constructor(
-    private ps: PrestationService,
-  ) { }
+  public linkAddPresta = 'Add Prestaion';
+
+  constructor(private ps: PrestationService) { }
 
   ngOnInit() {
     this.collection = this.ps.collection;
@@ -26,4 +26,7 @@ export class ListPrestationsComponent implements OnInit {
       'state'
     ];
   }
+
+
+
 }

@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, Router } from '@angular/router';
-import {PageClientComponent} from './pages/page-client/page-client.component';
+import { RouterModule, Routes } from '@angular/router';
+import { PageClientsComponent } from './pages/page-clients/page-clients.component';
+import { PageAddClientComponent } from './pages/page-add-client/page-add-client.component';
 
 const appRoutes: Routes = [
-  { path: '', component: PageClientComponent },
+  { path: '', component: PageClientsComponent },
+  { path: 'add', component: PageAddClientComponent }
 ];
 
-
 @NgModule({
-  declarations: [],
+
   imports: [
-    RouterModule.forChild(appRoutes)
+    RouterModule.forChild(
+      appRoutes,
+    )
   ]
 })
 export class ClientsRoutingModule { }

@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~src/styles/fonts';
-@import '~src/styles/layout';
+// global style
+@import 'fonts';
+@import 'layout';
+
+// fonts
 
 h1 {
   font-size: $h1-fontsize;
@@ -19,7 +22,7 @@ p, a, li, span {
 }
 
 @media (min-width: $lg-breakpoint) {
-  body {
+  body{
     font-size: 17px;
   }
 }

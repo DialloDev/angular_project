@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PagePrestationsComponent } from './page-prestations.component';
 
-describe('PagePrestationsComponent', () => {
+describe('PagePrestationComponent', () => {
   let component: PagePrestationsComponent;
   let fixture: ComponentFixture<PagePrestationsComponent>;
 

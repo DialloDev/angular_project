@@ -1,0 +1,25 @@
+@import 'theme';
+
+#tab .state-inactif,
+#tab .state-annule {
+  background: $palette-color-one;
+}
+
+
+#tab .state-option {
+  background: lighten($palette-color-one, 30);
+}
+#tab .state-actif,
+#tab .state-confirme {
+  background: $palette-color-three;
+}
+
+app-list-clients #tab thead {
+  background: lighten($dark-color, 10);
+  color: $light-color;
+}
+
+app-list-prestations #tab thead {
+  background: lighten($dark-color, 10);
+  color: $light-color;
+}

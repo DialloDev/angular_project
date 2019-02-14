@@ -1,0 +1,7 @@
+{"files.autoSave": "onFocusChange",
+  "window.zoomLevel": -1,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.iconTheme": "material-icon-theme" ,
+  "tslint.autoFixOnSave": true
+
+}

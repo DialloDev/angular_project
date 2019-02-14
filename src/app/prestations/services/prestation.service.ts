@@ -1,31 +1,38 @@
 import { Injectable } from '@angular/core';
-import { Prestation } from 'src/app/shared/models/prestation.model';
+import { Prestation } from 'src/shared/models/prestation.model';
 import { FakePrestations } from './fake-prestations';
-import {State} from 'src/app/shared/enums/state.enum';
+import { State } from 'src/shared/enums/state.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrestationService {
-  private Collection: Prestation[];
-
+  // tslint:disable-next-line:variable-name
+  private _collection: Prestation[];
   constructor() {
     this.collection = FakePrestations;
-   }
-  // recuperer la collection
+  }
+
+  // get collection
   public get collection(): Prestation[] {
-    return this.Collection;
+    return this._collection;
   }
-  // set la collection
+  // set collection
   public set collection(col: Prestation[]) {
-    this.Collection = col;
+    this._collection = col;
   }
-  // add item in collection
+
+  // update item of collection
   public update(item: Prestation, state: State) {
     item.state = state;
-    console.log(item.state);
   }
 
+  public add(item: Prestation) {
+    this._collection.push(new Prestation(item));
+  }
+
+  // add item in collection
   // delete item in collection
 
+  // get itemby id
 }

@@ -1,13 +1,13 @@
-<tr >
-    <td>{{ item.client}}</td>
-    <td>{{ item.name}}</td>
-    <td>{{ item.email}}</td>
-    <td>{{ item.state}}</td>
-
-      <td  [appStateClient]="item.state">
-      <select class="form-control" (change)="changeState($event)">
-        <option *ngFor="let state of states | keyvalue" [value]="state.value"
-        [selected]= "item.state === state.value">{{state.value}}</option>
+<tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.email }}</td>
+    <td [appState]="item.state">
+      <select class="form-control" (change)="changeState(item, $event)">
+        <option
+          *ngFor="let state of (states | keyvalue)"
+          [value]="state.value"
+          [selected]="item.state === state.value">{{ state.value }}</option
+        >
       </select>
     </td>
-</tr>
+  </tr>
