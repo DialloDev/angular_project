@@ -10,6 +10,10 @@ import { AddPrestationComponent } from './containers/add-prestation/add-prestati
 import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormPrestaComponent } from './components/form-presta/form-presta.component';
+import { CommentPrestationComponent } from './components/comment-prestation/comment-prestation.component';
+import { DetailPrestationComponent } from './components/detail-prestation/detail-prestation.component';
+import { PageEditComponent } from './pages/page-edit/page-edit.component';
+import { ModifierPrestationComponent } from './containers/modifier-prestation/modifier-prestation.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { FormPrestaComponent } from './components/form-presta/form-presta.compon
     PageAddPrestationComponent,
     AddPrestationComponent,
     FormPrestationComponent,
-    FormPrestaComponent
+    FormPrestaComponent,
+    CommentPrestationComponent,
+    DetailPrestationComponent,
+    PageEditComponent,
+    ModifierPrestationComponent
   ],
   imports: [CommonModule, PrestationsRoutingModule, SharedModule, FormsModule,
     ReactiveFormsModule]

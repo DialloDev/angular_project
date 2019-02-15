@@ -6,14 +6,16 @@ import { TableauComponent } from './containers/tableau/tableau.component';
 import { StateDirective } from './directives/state.directive';
 import { TotalPipe } from './pipes/total.pipe';
 import { RouterModule } from '@angular/router';
+import { LinksComponent } from './components/links/links.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [TotalPipe, TableauComponent, StateDirective, AddRowComponent],
-  exports: [TotalPipe, TableauComponent, StateDirective, TemplatesModule, AddRowComponent],
+  declarations: [TotalPipe, TableauComponent, StateDirective, AddRowComponent, LinksComponent],
+  exports: [TotalPipe, TableauComponent, StateDirective, TemplatesModule, AddRowComponent, LinksComponent],
   imports: [
     CommonModule,
     TemplatesModule,
-    RouterModule
+    RouterModule, FontAwesomeModule
   ]
 })
 export class SharedModule { }

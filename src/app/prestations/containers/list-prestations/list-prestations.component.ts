@@ -29,7 +29,8 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
       'tjm ht',
       'total ht',
       'total ttc',
-      'state'
+      'state',
+      'edit'
     ];
   }
   ngOnDestroy() {

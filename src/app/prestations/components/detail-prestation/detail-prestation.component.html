@@ -1,0 +1,7 @@
+<div *ngIf="detail$ | async as presta">
+  <ul>
+      <li>Type : {{presta.typePresta}}</li>
+      <li> Client : {{presta.client}}</li>
+      <li>Nb jours : {{presta.nbJours}}</li>
+  </ul>
+</div>

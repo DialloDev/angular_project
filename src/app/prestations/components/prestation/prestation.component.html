@@ -1,17 +1,20 @@
-<tr>
-  <td>{{ item.typePresta }}</td>
+<tr (click)="getDetail()">
+  <td #first>{{ item.typePresta }}</td>
   <td>{{ item.client }}</td>
   <td>{{ item.nbJours }}</td>
   <td>{{ item.tjmHt }}</td>
   <td>{{ item | total }}</td>
   <td>{{ item | total: item.tauxTva }}</td>
   <td [appState]="item.state">
-    <select class="form-control" (change)="changeState(item, $event)">
+    <select class="form-control" (change)="changeState($event)" (click)="$event.stopPropagation()">
       <option
         *ngFor="let state of (states | keyvalue)"
         [value]="state.value"
         [selected]="item.state === state.value">{{ state.value }}</option
       >
     </select>
+  </td>
+  <td>
+    <fa-icon [icon]="faEdit" ></fa-icon>
   </td>
 </tr>

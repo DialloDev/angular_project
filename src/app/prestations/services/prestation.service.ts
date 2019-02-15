@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { Prestation } from 'src/shared/models/prestation.model';
 import { State } from 'src/shared/enums/state.enum';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,15 @@ export class PrestationService {
   // tslint:disable-next-line:variable-name
   private itemsCollection: AngularFirestoreCollection<Prestation>;
   private Collection: Observable<Prestation[]>;
-
-  constructor(private afs: AngularFirestore) {
+  public detail$: BehaviorSubject<Prestation> = new BehaviorSubject(undefined);
+  constructor(
+    private afs: AngularFirestore,
+    private http: HttpClient) {
     this.itemsCollection = afs.collection<Prestation>('prestations');
     this.collection = this.itemsCollection.valueChanges().pipe(
       // map( data => data.map( item => new Prestation(item)))
       map( (data) => {
+        this.detail$.next(data[0]);
         return data.map( (item) => {
           return new Prestation(item);
         });
@@ -25,7 +29,7 @@ export class PrestationService {
     );
   }
 
-  /* get collection
+ //  get collection
   public get collection(): Observable<Prestation[]> {
     return this.Collection;
   }
@@ -34,7 +38,7 @@ export class PrestationService {
     this.Collection = col;
   }
 
-  // update item of collection
+  /*// update item of collection
   public update(item: Prestation, state: State) {
     item.state = state;
   }
@@ -54,7 +58,7 @@ export class PrestationService {
     return this.itemsCollection.doc(id).set(prestation).catch((e) => {
       console.log(e);
     });
-    // return this.http.post('urlapi/addprestation', item);
+    // return this.http.post(`${API_URL}/prestations/${item}`);
   }
 
 
@@ -66,7 +70,7 @@ export class PrestationService {
     return this.itemsCollection.doc(item.id).update(presta).catch((e) => {
       console.log(e);
     });
-    // return this.http.patch('urlapi/prestationupdate/'+item.id, presta);
+    // return this.http.patch(`${API_URL}/prestations/${item.id}`);
   }
 
   public delete(item: Prestation): Promise<any> {
