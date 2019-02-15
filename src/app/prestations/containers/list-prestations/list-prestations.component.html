@@ -1,4 +1,4 @@
 <app-tableau [headers]="headers">
-  <app-prestation *ngFor="let cmd of collection" [item] = "cmd"></app-prestation>
+  <app-prestation *ngFor="let cmd of collection$ | async" [item] = "cmd"></app-prestation>
 </app-tableau>
 <app-add-row [label]="linkAddPresta"></app-add-row>

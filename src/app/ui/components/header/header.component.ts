@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.appTitle =  'My appName';
+    this.appTitle =  'Welcome To My Angular App';
   }
 
 }

@@ -10,7 +10,7 @@ import { ClientService } from '../../services/client.service';
 export class ListClientsComponent implements OnInit {
   public collection: Client[];
   public headers: string[];
-  public linkAddClient = 'Add Client';
+  public linkAddClient = 'Ajouter un Client';
 
   constructor(private cs: ClientService) { }
 
